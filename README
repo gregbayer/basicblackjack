@@ -10,7 +10,7 @@ Beyond all that, it might even be fun!  Please send all 1% of all chips bet to m
 1. Make sure you have java 1.6
 2. git clone git://github.com/gregbayer/basicblackjack.git
 3. Make sure you are in the basicblackjack directory
-4. java -cp jar/BasicBlackJack.jar:lib/* com.gbayer.basicblackjack.Game
+4. java -jar jar/BasicBlackJack.jar
 
 Javadocs for BasicBlackJack can be found in the docs directory.
 Basic JUnit tests for each class can be found in the test directory.

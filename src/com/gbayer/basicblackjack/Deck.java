@@ -13,7 +13,7 @@ import java.util.Stack;
 import org.apache.log4j.Logger;
 
 /**
- * The Deck of <code>Cards<code> in play for the current <code>Game</code>.
+ * A <code>Deck</code> of <code>Cards</code> in play for the current <code>Game</code>.
  */
 public class Deck
 {

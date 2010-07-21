@@ -12,7 +12,7 @@ import org.apache.log4j.Logger;
 import com.gbayer.basicblackjack.ui.UI;
 
 /**
- * A Player that has a name assigned, holds a <code>Hand</code> of <code>Cards</code>, and is capable of taking actions.
+ * A <code>Player</code> has a name assigned, holds a <code>Hand</code> of <code>Cards</code>, and is capable of taking actions.
  */
 public abstract class Player
 {

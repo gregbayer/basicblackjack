@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import org.apache.log4j.Logger;
 
 /**
- * A Hand containing <code>Cards</code> and currently heald by a <code>Player</code>
+ * A <code>Hand</code> contains <code>Cards</code> currently held by a <code>Player</code>
  */
 public class Hand
 {
