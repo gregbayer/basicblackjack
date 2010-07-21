@@ -1,0 +1,8 @@
+# Lines that start with '#' are comments.
+*~
+bin/
+.classpath
+.project
+.settings
+META-INF/
+*.jardesc
