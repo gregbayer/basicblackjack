@@ -22,9 +22,6 @@ public class Game
 	/** The Log4J logger. */
 	private static Logger log = Logger.getLogger(Game.class);
 
-	/** Constant - default number of starting chips */
-	private static final int STARTING_CHIPS = 500;
-
 	/** The user interface */
 	private UI ui;
 
@@ -36,6 +33,15 @@ public class Game
 
 	/** The deck in use for this game. */
 	private Deck deck;
+	
+	/** Constant - Default number of starting chips. */
+	public static final int STARTING_CHIPS = 500;
+
+	/** Constant - The minimum bet allowed. */
+	public static final int MIN_BET = 0;
+
+	/** Constant - The maximum bet allowed. */
+	public static final int MAX_BET = 100;
 
 	/**
 	 * Instantiates a new game with default starting chips (500).
@@ -120,7 +126,7 @@ public class Game
 	 */
 	private void checkForLowDeck()
 	{
-		if (deck.numCardsRemaining() < 20)
+		if (deck.numCardsRemaining() < Deck.LOW_DECK_SIZE)
 		{
 			log.info("Deck low - bringing in new deck");
 			deck.newDeck();

@@ -13,7 +13,8 @@ import java.util.Stack;
 import org.apache.log4j.Logger;
 
 /**
- * A <code>Deck</code> of <code>Cards</code> in play for the current <code>Game</code>.
+ * A <code>Deck</code> of <code>Cards</code> in play for the current
+ * <code>Game</code>.
  */
 public class Deck
 {
@@ -27,12 +28,21 @@ public class Deck
 	/** The cards. */
 	private Stack<Card> cards;
 
+	/** Constant - Size of one deck. */
+	public static final int STANDARD_DECK_SIZE = 52;
+
+	/**
+	 * Constant - Size of deck at which a dealer might want to swap in a new
+	 * deck.
+	 */
+	public static final int LOW_DECK_SIZE = 20;
+
 	/**
 	 * Instantiates a new deck.
 	 */
 	public Deck()
 	{
-		this(52);
+		this(STANDARD_DECK_SIZE);
 	}
 
 	/**
@@ -57,13 +67,17 @@ public class Deck
 		log.info("Generating new deck");
 
 		cards.clear();
-		// Repeat for each multiple of 52 cards (assumes one deck is 52 cards)
-		for (int d = 0; d < (deckSize / 52); d++)
-			for (int i = 0; i < 52; i++)
+
+		// This loop supports blackjack games where more than one deck is used.
+		// Use of more than one deck increases the house advantage.
+
+		// Repeat for each multiple of STANDARD_DECK_SIZE
+		for (int d = 0; d < (deckSize / STANDARD_DECK_SIZE); d++)
+			for (int i = 0; i < STANDARD_DECK_SIZE; i++)
 			{
 				// Card values are from 1-13
 				// Create 4 copies of each card value (one for each suit)
-				cards.push(new Card(1 + (i % 13)));
+				cards.push(new Card(1 + (i % Card.MAX_CARD_ID)));
 			}
 
 		Collections.shuffle(cards);

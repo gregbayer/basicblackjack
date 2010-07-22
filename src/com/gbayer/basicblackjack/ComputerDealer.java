@@ -21,7 +21,7 @@ public class ComputerDealer extends Player
 	/** The Log4J logger. */
 	private static Logger log = Logger.getLogger(ComputerDealer.class);
 
-	/** Constant - hand value at which dealer must Stay. */
+	/** Constant - Hand value at which dealer must Stay. */
 	public static final int STAY_VALUE = 17;
 
 	/**

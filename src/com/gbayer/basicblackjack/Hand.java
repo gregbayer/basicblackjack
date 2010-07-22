@@ -12,7 +12,8 @@ import java.util.ArrayList;
 import org.apache.log4j.Logger;
 
 /**
- * A <code>Hand</code> contains <code>Cards</code> currently held by a <code>Player</code>
+ * A <code>Hand</code> contains <code>Cards</code> currently held by a
+ * <code>Player</code>
  */
 public class Hand
 {
@@ -20,17 +21,11 @@ public class Hand
 	/** The Log4J logger. */
 	private static Logger log = Logger.getLogger(Hand.class);
 
-	/** Constant - highest value a hand can have before busting */
-	public static int MAX_HAND_VALUE = 21;
+	/** Constant - Highest value a hand can have before busting. */
+	public static final int MAX_HAND_VALUE = 21;
 
-	/** Constant - low value of an ace */
-	public static int LOW_ACE_VALUE = 1;
-
-	/** Constant - high value of an ace */
-	public static int HIGH_ACE_VALUE = 11;
-
-	/** Constant - difference between low and high value of an ace */
-	public static int ACE_UPGRADE_VALUE = HIGH_ACE_VALUE - LOW_ACE_VALUE;
+	/** Constant - Difference between low and high value of an ace. */
+	public static final int ACE_UPGRADE_VALUE = Card.HIGH_ACE_VALUE - Card.LOW_ACE_VALUE;
 
 	/**
 	 * The Enum Result.
@@ -89,7 +84,7 @@ public class Hand
 		{
 			int cardValue = card.getCardValue(true);
 			totalWithAcesLow += cardValue;
-			if (cardValue == 1)
+			if (cardValue == Card.LOW_ACE_VALUE)
 			{
 				numberOfAces++;
 			}

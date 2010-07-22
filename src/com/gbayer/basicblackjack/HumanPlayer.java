@@ -26,6 +26,9 @@ public class HumanPlayer extends Player
 	/** The player's current bet. */
 	private int currentBet;
 
+	/** Constant - Flag indicating that no bet has been placed. */
+	public static final int INVALID_BET_FLAG = -1;
+
 	/**
 	 * Instantiates a new human player.
 	 * 
@@ -38,7 +41,7 @@ public class HumanPlayer extends Player
 	{
 		super(name);
 		this.chips = startingChips;
-		this.currentBet = -1; // no current bet
+		this.currentBet = INVALID_BET_FLAG; // no current bet
 	}
 
 	/**
@@ -79,13 +82,13 @@ public class HumanPlayer extends Player
 	 */
 	public void winBet()
 	{
-		if (this.currentBet == -1)
+		if (this.currentBet == INVALID_BET_FLAG)
 			log.error("Player.winBet() called without bet placed.");
 		else
 		{
 			log.info("Bet won: " + this.currentBet);
 			winChips(this.currentBet);
-			this.currentBet = -1; // reset currentBet
+			this.currentBet = INVALID_BET_FLAG; // reset currentBet
 		}
 	}
 
@@ -95,13 +98,13 @@ public class HumanPlayer extends Player
 	 */
 	public void looseBet()
 	{
-		if (this.currentBet == -1)
+		if (this.currentBet == INVALID_BET_FLAG)
 			log.error("Player.looseBet() called without bet placed.");
 		else
 		{
 			log.info("Bet lost: " + this.currentBet);
 			loseChips(this.currentBet);
-			this.currentBet = -1; // reset currentBet
+			this.currentBet = INVALID_BET_FLAG; // reset currentBet
 		}
 	}
 
