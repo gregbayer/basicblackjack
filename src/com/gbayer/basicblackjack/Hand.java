@@ -95,7 +95,7 @@ public class Hand
 		int total = totalWithAcesLow;
 		// Upgrade ace if can do so without causing player to bust
 		if (numberOfAces > 0
-				&& (totalWithAcesLow + ACE_UPGRADE_VALUE) < MAX_HAND_VALUE)
+				&& (totalWithAcesLow + ACE_UPGRADE_VALUE) <= MAX_HAND_VALUE)
 		{
 			total += ACE_UPGRADE_VALUE;
 			log.debug("Updrading one ace");
